@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Songs extends Model
 {
     use HasFactory;
-    protected $fillable = [
-    'idUser',
-    'idGender',
-    'title',
-    'artist',
-    'image',
-    'date',
-    'played',
-    'url'
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
 }
