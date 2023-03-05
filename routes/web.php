@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('productos', [ProductController::class, 'index']);
 
+// Login
+
+Route::get('/', function () {
+    return view('login');
+});
+
 // Route::get('productos/{producto}/precios/{precio?}', function ($producto, $precio=6) {
 //     return "<h1>Este es el producto $producto y su precio es $precio</h1>";
 // });
