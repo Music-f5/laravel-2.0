@@ -18,7 +18,7 @@ class SongsFactory extends Factory
     {
         return [
             'idUser' => 1,
-            'idGender' => 5,
+            'idGender' => 1,
             'title' => $this->faker->sentence(),
             'artist' => $this->faker->name(),
             'image' => $this->faker->imageUrl(),
