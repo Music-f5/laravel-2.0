@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('productos', [ProductController::class, 'index']);
+//Route::get('productos', [ProductController::class, 'index']);
 
 // Route::get('productos/{producto}/precios/{precio?}', function ($producto, $precio=6) {
 //     return "<h1>Este es el producto $producto y su precio es $precio</h1>";
