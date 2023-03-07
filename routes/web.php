@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SongsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::get('/formador', function () {
+//return view('formador.index');
+//});
+//Route::get('/formador/create', [SongsController::class, 'create']);
+Route::resource('formador', SongsController::class);
 
 //Route::get('productos', [ProductController::class, 'index']);
 
