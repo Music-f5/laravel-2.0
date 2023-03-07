@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SongsController;
+use App\Http\Controllers\FormadorController;
 
 
 /*
@@ -23,7 +23,7 @@ Route::get('/', function () {
 //return view('formador.index');
 //});
 //Route::get('/formador/create', [SongsController::class, 'create']);
-Route::resource('formador', SongsController::class);
+ Route::resource('formador', FormadorController::class);
 
 //Route::get('productos', [ProductController::class, 'index']);
 
@@ -35,3 +35,4 @@ Route::resource('formador', SongsController::class);
 // Route::get('productos/{producto}/precios/{precio}', function ($producto, $precio) {
 //     return "<h1>Este es el producto $producto y su precio es $precio</h1>";
 // });
+?>
