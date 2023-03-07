@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FormadorController extends Controller
@@ -12,6 +12,9 @@ class FormadorController extends Controller
     public function index()
     {
         //
+        $datos['usuarios'] = User::paginate(5);
+        return view('formador.index', $datos);
+
     }
 
     /**
