@@ -16,7 +16,10 @@
             <td>{{$usuario->email }}</td>
             <td>{{$usuario->role }}</td>
             <td>
-                Update | 
+                <a href="{{url('/formador/'.$usuario->id.'/edit')}}">
+                    Editar
+                </a>
+                 | 
                 <form action="{{url('/formador/'.$usuario->id)}}"  class='form' method="post">
                     @csrf
                     {{method_field('DELETE')}}
