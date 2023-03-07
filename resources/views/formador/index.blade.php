@@ -16,7 +16,12 @@
             <td>{{$usuario->email }}</td>
             <td>{{$usuario->role }}</td>
             <td>
-                Update | Delete
+                Update | 
+                <form action="{{url('/formador/'.$usuario->id)}}"  class='form' method="post">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <input value="Borrar" type="submit" onclick="return confirm('Borrar el usuario ????') " class="btnForm btn-primary" />
+                </form>
             </td>
         </tr>
         @endforeach
