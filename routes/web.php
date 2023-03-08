@@ -27,7 +27,7 @@ use App\Http\Controllers\DesarrolladorController;
 
 Route::view('/login',"login")->name('login');
 //Route::view('/registro',"register")->name('registro');
-Route::view('/desarrollador',"secret")->name('desarrollador.index');
+Route::view('/desarrollador',"secret")->middleware('auth')->name('desarrollador.index'); 
 
 //Route::post('/validar-registro',[LoginController::class, 'register'])->name('validar-registro');
 Route::post('/iniciar-sesion',[LoginController::class, 'login'])->name('iniciar-sesion');

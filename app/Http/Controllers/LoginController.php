@@ -30,10 +30,39 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         //Validar los datos
+
+        $credentials = [
+            "email" => $request->email,
+            "password" => $request->password,
+            //"active" => true
+        ];
+
+        //$remember = ($request->has('remember') ? true : false );
+        $remember = true; // para forzar a mantener la sesion porque no lo pusimos en el form del login
+
+        if (Auth::attempt($credentials, $remember)){
+
+            $request->session()->regenerate();
+
+            return redirect()->intended('desarrollador'); 
+
+        }else{
+            return redirect(route('login')); 
+        }
+
+
     }
 
     public function logout(Request $request)
     {
-        //Validar los datos
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
+        
+
+
     }
 }

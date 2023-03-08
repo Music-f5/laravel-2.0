@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; //Contraseñas
 
 class FormadorController extends Controller
 {
@@ -35,9 +36,20 @@ class FormadorController extends Controller
     public function store(Request $request)
     {
         //$datosUsuario = request()-> all();
-        $datosUsuario = request()-> except('_token');
-        User::insert($datosUsuario);
-        return response()-> json($datosUsuario);
+        // $datosUsuario = request()-> except('_token');
+
+        // User::insert($datosUsuario);
+        // return response()-> json($datosUsuario);
+        //Validar los datos
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = $request->role;
+
+        $user->save();
+        
+        return redirect(route('desarrollador'));
     }
 
     /**
@@ -65,6 +77,7 @@ class FormadorController extends Controller
     {
         //
         $datosUsuario = request()-> except('_token', '_method');
+        $datosUsuario['password'] = Hash::make($request->password);
         User::where('id','=',$id)->update($datosUsuario);
         $usuario=User::findOrFail($id);
         return view('formador.edit', compact('usuario'));
