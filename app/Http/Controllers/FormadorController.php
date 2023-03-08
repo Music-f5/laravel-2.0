@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Formador;
 use Illuminate\Http\Request;
 
 class FormadorController extends Controller
@@ -12,11 +12,14 @@ class FormadorController extends Controller
     public function index()
     {
         //
+        return view('formador.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
+  
+
     public function create()
     {
         return view('formador.create');
@@ -25,11 +28,15 @@ class FormadorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+
     public function store(Request $request)
     {
-        //$datosUsuario = request()-> all();
-        $datosUsuario = request()-> except('_token');
-        return response()-> json($datosUsuario);
+        //$datosFormador = request()-> all();
+        $datosFormador= request()-> except('_token');
+        
+
+        return response()-> json($datosFormador);
     }
 
     /**

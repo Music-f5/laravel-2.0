@@ -1,6 +1,6 @@
 <h1>Create</h1>
 
-<form action="{{url('/formador')}}"  class='form' method="post">
+<form action="{{url('/formador')}}"  class='form' method="post" enctype="multipart/form-data">
     @csrf
                 <div class="formGroup">
                     <label for="labelFondoform">NOMBRE</label>
@@ -23,5 +23,5 @@
                     </select>
                 </div>
              
-                <input name="ENVIAR" id="enviar" type="submit" class="btnForm btn-primary" />
+                <input type="submit" value="Enviar" class="btnForm btn-primary" />
             </form>
