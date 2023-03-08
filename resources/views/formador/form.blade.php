@@ -1,16 +1,16 @@
 <div class="formGroup">
     <label for="labelFondoform">NOMBRE</label>
-    <input name="name" type="text" id="name" class="fondoForm" value="">
+    <input name="name" type="text" id="name" class="fondoForm" value="{{$usuario->name}}">
 </div>
 
 <div class="formGroup">
     <label for="labelFondoForm">EMAIL</label>
-    <input name="email" type="text" id="email" class="fondoForm" value="">
+    <input name="email" type="text" id="email" class="fondoForm" value="{{$usuario->email}}">
 </div>
 
 <div class="formGroup">
     <label for="labelFondoForm">CONTRASEÑA</label>
-    <input name="password" type="text" id="password" class="fondoForm" value="">
+    <input name="password" type="text" id="password" class="fondoForm" value="{{$usuario->password}}">
 </div>
 
 <div class="formGroup">

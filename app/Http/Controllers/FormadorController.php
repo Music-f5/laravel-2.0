@@ -47,18 +47,24 @@ class FormadorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
-        return view('formador.edit');
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+        $datosUsuario = request()-> except('_token', '_method');
+        User::where('id','=',$id)->update($datosUsuario);
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
+
     }
 
     /**
