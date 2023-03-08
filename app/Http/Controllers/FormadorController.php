@@ -1,13 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Song;
-//use Illuminate\Http\RedirectResponse;
+use App\Models\User;
 use Illuminate\Http\Request;
-//use Illuminate\Http\Response;
 
-class SongsController extends Controller
+class FormadorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +12,9 @@ class SongsController extends Controller
     public function index()
     {
         //
+        $datos['usuarios'] = User::paginate(5);
+        return view('formador.index', $datos);
+
     }
 
     /**
@@ -30,7 +30,10 @@ class SongsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //$datosUsuario = request()-> all();
+        $datosUsuario = request()-> except('_token');
+        User::insert($datosUsuario);
+        return response()-> json($datosUsuario);
     }
 
     /**
@@ -44,25 +47,34 @@ class SongsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+        $datosUsuario = request()-> except('_token', '_method');
+        User::where('id','=',$id)->update($datosUsuario);
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
         //
+        User::destroy($id);
+        return redirect('formador');
+
     }
 }
-?>

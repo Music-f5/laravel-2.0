@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('artist');
             $table->string('image');
-            $table->dateTime('date');
+            $table->dateTime('date')->nullable();
             $table->boolean('played');
             $table->string('url');
             $table->timestamps();
