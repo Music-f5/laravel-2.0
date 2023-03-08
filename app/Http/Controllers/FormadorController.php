@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Formador;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FormadorController extends Controller
@@ -12,7 +12,9 @@ class FormadorController extends Controller
     public function index()
     {
         //
-        return view('formador.index');
+        $datos['usuarios'] = User::paginate(5);
+        return view('formador.index', $datos);
+
     }
 
     /**
@@ -32,11 +34,10 @@ class FormadorController extends Controller
 
     public function store(Request $request)
     {
-        //$datosFormador = request()-> all();
-        $datosFormador= request()-> except('_token');
-        
-
-        return response()-> json($datosFormador);
+        //$datosUsuario = request()-> all();
+        $datosUsuario = request()-> except('_token');
+        User::insert($datosUsuario);
+        return response()-> json($datosUsuario);
     }
 
     /**
@@ -50,24 +51,34 @@ class FormadorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         //
+        $datosUsuario = request()-> except('_token', '_method');
+        User::where('id','=',$id)->update($datosUsuario);
+        $usuario=User::findOrFail($id);
+        return view('formador.edit', compact('usuario'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
         //
+        User::destroy($id);
+        return redirect('formador');
+
     }
 }
