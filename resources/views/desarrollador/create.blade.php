@@ -1,6 +1,6 @@
 <h1>Create</h1>
 
-<form action="{{url('/formador')}}"  class='form' method="post">
+<form action="{{url('/desarrollador')}}"  class='form' method="post" enctype="multipart/form-data">
     @csrf
-    @include('formador.form');           
+    @include('desarrollador.form');           
 </form>

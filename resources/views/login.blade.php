@@ -10,15 +10,15 @@
 
 <body class="body-login">
     <div class="container mt-5 ">
-        <form class="form-login" method="post">
+        <form class="form-login" method="post" action="¨{{route('iniciar-sesion')}}">
             <div class="form-group ">
                 <label for="userEmail">Email</label>
-                <input type="text" class="form-control" id="userEmail" name="userEmail"
+                <input type="text" class="form-control" id="email" name="email"
                     placeholder="Tu correo electrónico" />
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input type="password" class="form-control" id="password" name="userPassword"
+                <input type="password" class="form-control" id="password" name="password"
                     placeholder="Tu contraseña" />
             </div>
             <button type="submit" class="btn boton-login">Iniciar sesión</button>
