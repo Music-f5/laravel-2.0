@@ -22,4 +22,4 @@
     </select>
 </div>
 
-<input value="ENVIAR" type="submit" class="btnForm btn-primary" />
+<input value="Enviar Datos" type="submit" class="btnForm btn-primary" />

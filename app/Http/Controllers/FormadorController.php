@@ -32,6 +32,7 @@ class FormadorController extends Controller
     {
         //$datosUsuario = request()-> all();
         $datosUsuario = request()-> except('_token');
+        User::insert($datosUsuario);
         return response()-> json($datosUsuario);
     }
 
