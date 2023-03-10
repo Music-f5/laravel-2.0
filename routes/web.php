@@ -16,17 +16,26 @@ use App\Http\Controllers\FormadorController;
 */
 
 Route::get('/', function () {
-    return view('login');
+     return view('login');
 });
 
-Route::get('/insertsong', function () {
-    return view('insertSong');
-});
+// Route::get('/insertsong', function () {
+//     return view('insertSong');
+//  });
 
-//Route::get('/formador', function () {
-//return view('formador.index');
-//});
-//Route::get('/formador/create', [SongsController::class, 'create']);
- Route::resource('formador', FormadorController::class);
+// Route::get('/formador', function () {
+// return view('formador.index');
+// });
+// //Route::get('/formador/create', [SongsController::class, 'create']);
+  Route::resource('formador', FormadorController::class);
+ // Route::resource('formador', 'App\Http\Controllers\FormadorController');
+
+//Route::get('/', 'login')->name('login');
+// Route::controller(FormadorController::class)->group(function(){
+// Route::get('/formador', 'index')->name('formador');
+//Route::get('/formador/{formador}/edit', 'edit')->name('formador');
+
+//     Route::get('blog/{post:slug}', 'post')->name('post');
+//  })
 
 ?>

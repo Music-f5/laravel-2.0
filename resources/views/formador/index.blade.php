@@ -1,4 +1,9 @@
-<table class="table">
+@extends('formador.plantilla')
+@section('content')
+    
+<a href="formador/create" class="btn btn-primary">Crear</a>
+
+<table class="table table-dark" >
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -31,4 +36,4 @@
         
     </tbody>
 </table>
-
+@endsection

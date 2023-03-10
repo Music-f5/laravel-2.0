@@ -14,6 +14,7 @@ class FormadorController extends Controller
         //
         $datos['usuarios'] = User::paginate(5);
         return view('formador.index', $datos);
+        // return(view('insertSong'));
 
     }
 
