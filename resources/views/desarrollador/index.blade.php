@@ -23,11 +23,11 @@
             <td>{{$song->image }}</td>
             <td>{{$song->idUser }}</td>
             <td>
-                Play | 
-                <a href="{{url('/desarrollador/'.$song->id.'/edit')}}">
-                    Editar
-                </a> | 
                 <form action="{{url('/desarrollador/'.$song->id)}}"  class='form' method="post">
+                    Play | 
+                    <a href="{{url('/desarrollador/'.$song->id.'/edit')}}">
+                        Editar
+                    </a> | 
                     @csrf
                     {{method_field('DELETE')}}
                     <input value="Borrar" type="submit" onclick="return confirm('Borrar la cancion ????') " class="btnForm btn-primary" />

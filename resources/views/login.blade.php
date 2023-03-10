@@ -10,7 +10,9 @@
 
 <body class="body-login">
     <div class="container mt-5 ">
-        <form class="form-login" method="post" action="{{route('iniciar-sesion')}}">
+        {{-- <form class="form-login" method="post" action="{{route('iniciar-sesion')}}"> --}}
+        <form class="form-login" method="post" action="">
+            @csrf
             <div class="form-group ">
                 <label for="userEmail">Email</label>
                 <input type="text" class="form-control" id="email" name="email"

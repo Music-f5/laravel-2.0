@@ -11,6 +11,37 @@ use Illuminate\Support\Facades\Auth; //Autenticacion
 class LoginController extends Controller
 {
     //
+    public function create() {
+        
+        return view('login');
+    }
+
+    /*public function store() {
+        
+        if(auth()->attempt(request(['email', 'password'])) == false) {
+            return back()->withErrors([
+                'message' => 'El email y/o contraseñas son icorrectos, por favor intente de nuevo.',
+            ]);
+
+        } else {
+
+            if(auth()->user()->role == 'trainer') {
+                return redirect()->route('formador.index');
+            } else {
+                return redirect()->route('desarrollador.index');
+
+            }
+        }
+    }*/
+
+    public function destroy() {
+
+        auth()->logout();
+
+        return redirect()->to('/');
+    }
+
+/*
 
     public function register(Request $request)
     {
@@ -26,6 +57,8 @@ class LoginController extends Controller
         return redirect(route('desarrollador'));
 
     }
+*/
+    
 
     public function login(Request $request)
     {
@@ -44,7 +77,18 @@ class LoginController extends Controller
 
             $request->session()->regenerate();
 
-            return redirect()->intended('desarrollador'); 
+            //return redirect()->intended('desarrollador'); 
+           
+            if(auth()->user()->role == 'trainer') {
+                //return redirect()->route('formador.index');
+                return redirect()->intended('formador'); 
+            } else {
+                /* return redirect()->to('/'); */
+                //return redirect()->route('desarrollador.index');
+                return redirect()->intended('desarrollador'); 
+
+            }
+            
 
         }else{
             return redirect(route('login')); 
@@ -53,6 +97,7 @@ class LoginController extends Controller
 
     }
 
+/*
     public function logout(Request $request)
     {
         Auth::logout();
@@ -64,5 +109,5 @@ class LoginController extends Controller
         
 
 
-    }
+    }*/
 }

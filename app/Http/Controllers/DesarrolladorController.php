@@ -81,6 +81,22 @@ class DesarrolladorController extends Controller
 
     }
 
+    public function play( $id)
+    {
+        //
+        $datosSong = [
+            'date' => now(),
+            'played' => 1
+        ];
+        
+        Song::where('id','=',$id)->update($datosSong);
+        
+
+        $song=Song::findOrFail($id);
+        //return  oir cancion ;
+
+    }
+
     /**
      * Remove the specified resource from storage.
      */
