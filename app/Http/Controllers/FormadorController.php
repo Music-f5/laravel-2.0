@@ -20,6 +20,8 @@ class FormadorController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+  
+
     public function create()
     {
         return view('formador.create');
@@ -28,6 +30,8 @@ class FormadorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+
     public function store(Request $request)
     {
         //$datosUsuario = request()-> all();
