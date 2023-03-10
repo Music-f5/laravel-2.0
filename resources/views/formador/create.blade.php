@@ -4,6 +4,6 @@
 
 <form action="{{url('/formador')}}"  class='form' method="post" enctype="multipart/form-data">
     @csrf
-    @include('formador.form');           
+    @include('formador.form')          
 </form>
 @endsection
