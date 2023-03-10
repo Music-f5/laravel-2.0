@@ -1,4 +1,4 @@
-<div class="formGroup">
+<div class="formGroup ">
     <label for="labelFondoform">NOMBRE</label>
     <input name="name" type="text" id="name" class="fondoForm" value="{{$usuario->name}}">
 </div>
