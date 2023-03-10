@@ -1,7 +1,7 @@
 
 
-<div class="card">
-    <div class="card-header"></div>
+<div class="card bg-light">
+    <div class="card-header">Formulario</div>
     <div class="card-body">
 
         <div class="formGroup">
@@ -16,7 +16,7 @@
 
         <div class="formGroup">
             <label for="labelFondoForm">CONTRASEÑA</label>
-            <input name="password" type="text" id="password" class="form-control" value="@if(!empty($usuario->password)) {{$usuario->password}} @endif">
+            <input name="password" type="password" id="password" class="form-control" value="@if(!empty($usuario->password)) {{$usuario->password}} @endif">
         </div>
 
         <div class="formGroup">
@@ -27,6 +27,6 @@
             </select>
         </div>
 
-        <input value="Enviar Datos" type="submit" class="btnForm btn-primary" />
+        <input value="Enviar Datos" type="submit" class="btn btn-outline-danger" />
     </div>
 </div>
