@@ -12,10 +12,9 @@
   </head>
   <body>
    <div class="container">
-    <p>
-        {{-- <a href="{{route('formador')}}">Home</a> --}}
-        {{-- <a href="{{route('formador/create')}}">Blog</a> --}}
-    </p>
+    
+    @include('navegation')
+    
     <hr>
     @yield('content')
 

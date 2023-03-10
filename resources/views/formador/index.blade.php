@@ -2,7 +2,7 @@
 @section('content')
     <a href="formador/create" class="btn btn-outline-danger">Crear</a>
 
-    <table class="table table-dark">
+    <table class="table table-ls table-dark">
         <thead>
             <tr>
                 <th scope="col">#</th>
