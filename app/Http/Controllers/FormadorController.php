@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; //Contraseñas
 
 class FormadorController extends Controller
 {
@@ -14,12 +15,15 @@ class FormadorController extends Controller
         //
         $datos['usuarios'] = User::paginate(5);
         return view('formador.index', $datos);
+        // return(view('insertSong'));
 
     }
 
     /**
      * Show the form for creating a new resource.
      */
+  
+
     public function create()
     {
         return view('formador.create');
@@ -28,12 +32,16 @@ class FormadorController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+
+
     public function store(Request $request)
     {
         //$datosUsuario = request()-> all();
         $datosUsuario = request()-> except('_token');
+        $datosUsuario['password'] = Hash::make($request->password);
         User::insert($datosUsuario);
         return response()-> json($datosUsuario);
+
     }
 
     /**
@@ -61,6 +69,7 @@ class FormadorController extends Controller
     {
         //
         $datosUsuario = request()-> except('_token', '_method');
+        $datosUsuario['password'] = Hash::make($request->password);
         User::where('id','=',$id)->update($datosUsuario);
         $usuario=User::findOrFail($id);
         return view('formador.edit', compact('usuario'));
