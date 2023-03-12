@@ -2,6 +2,7 @@
     <label for="labelFondoform">Id Usyario</label>
     <input name="idUser" type="text" id="idUser" class="fondoForm" value="@if(!empty($song->idUser)) {{$song->idUser}} @endif">
 </div> --}}
+{{-- {{ auth()->user()->name }} --}}
 
 <div class="formGroup">
     <label for="labelFondoform">TTITULO</label>
@@ -22,9 +23,9 @@
     <label for="labelFondoForm">GENERO</label>
     <select name="idGender" id="idGender" class="fondoForm" > 
         <option value="1"
-        @if ($song->idGender == $song->idGender)
+        {{-- @if ($song->idGender == $song->idGender)
             {{'selected="selected"'}}
-        @endif 
+        @endif  --}}
         >Rock</option>
         
     </select>

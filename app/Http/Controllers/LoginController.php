@@ -16,7 +16,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    /*public function store() {
+    public function store() {
         
         if(auth()->attempt(request(['email', 'password'])) == false) {
             return back()->withErrors([
@@ -26,13 +26,15 @@ class LoginController extends Controller
         } else {
 
             if(auth()->user()->role == 'trainer') {
-                return redirect()->route('formador.index');
-            } else {
-                return redirect()->route('desarrollador.index');
+                //return redirect()->route('formador.index');
+                return redirect()->intended('formador'); 
+            } elseif(auth()->user()->role == 'coder') {
+                //return redirect()->route('desarrollador.index');
+                return redirect()->intended('desarrollador'); 
 
             }
         }
-    }*/
+    }
 
     public function destroy() {
 
@@ -82,7 +84,7 @@ class LoginController extends Controller
             if(auth()->user()->role == 'trainer') {
                 //return redirect()->route('formador.index');
                 return redirect()->intended('formador'); 
-            } else {
+            } elseif(auth()->user()->role == 'coder') {
                 /* return redirect()->to('/'); */
                 //return redirect()->route('desarrollador.index');
                 return redirect()->intended('desarrollador'); 

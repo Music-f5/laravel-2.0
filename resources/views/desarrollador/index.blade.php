@@ -1,4 +1,4 @@
-
+<a href="{{url('/desarrollador/create')}}"> Nueva </a>
 <table class="table">
     <thead>
         <tr>
@@ -24,7 +24,11 @@
             <td>{{$song->idUser }}</td>
             <td>
                 <form action="{{url('/desarrollador/'.$song->id)}}"  class='form' method="post">
-                    Play | 
+                    <form action="{{url('/desarrollador/'.$song->id)}}"  class='form' method="post" >
+                        @csrf
+                        {{method_field('PATCH')}}      
+                        <input value="Play" type="submit" class="btnForm btn-primary" />
+                    </form>
                     <a href="{{url('/desarrollador/'.$song->id.'/edit')}}">
                         Editar
                     </a> | 

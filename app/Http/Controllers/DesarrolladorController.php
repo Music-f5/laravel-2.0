@@ -35,14 +35,20 @@ class DesarrolladorController extends Controller
     public function store(Request $request)
     {
         //$datosUsuario = request()-> all();
-        $datosSong = request()-> except('_token');
+        $datosSong = request()->except('_token');
 
         if(request()->hasFile('image')){
             $datosSong['image']=$request->file('image')->store('uploads','public');
-        }        
+        }  
+        
+        $datosSong['idUser']= auth()->user()->id;
+        $datosSong['played']= 0;
+        $datosSong['date']= null;
+
         
         Song::insert($datosSong);
-        return response()-> json($datosSong);
+        //return response()-> json($datosSong);
+        return redirect('desarrollador');
     }
 
     /**
@@ -70,14 +76,30 @@ class DesarrolladorController extends Controller
     {
         //
         $datosSong = request()-> except('_token', '_method');
-        Song::where('id','=',$id)->update($datosSong);
+        if( !empty($datosSong['title']) ){
+            
+            Song::where('id','=',$id)->update($datosSong);
 
-        if(request()->hasFile('image')){
-            $datosSong['image']=$request->file('image')->store('uploads','public');
-        }    
+            if(request()->hasFile('image')){
+                $datosSong['image']=$request->file('image')->store('uploads','public');
+            }    
+
+            
+        }else{
+
+            $datosSong = [
+                'date' => now(),
+                'played' => 1
+            ];
+            
+            Song::where('id','=',$id)->update($datosSong);
+
+
+        }
 
         $song=Song::findOrFail($id);
-        return view('desarrollador.edit', compact('song'));
+        //return view('desarrollador.edit', compact('song'));
+        return redirect('desarrollador');
 
     }
 
