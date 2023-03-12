@@ -45,7 +45,7 @@ use App\Http\Controllers\DesarrolladorController;
 //return view('formador.index');
 //});
 //Route::get('/formador/create', [SongsController::class, 'create']);
- /* Route::resource('formador', FormadorController::class); */
+ Route::resource('formador', FormadorController::class); 
 
  Route::resource('desarrollador', DesarrolladorController::class);
  
@@ -85,9 +85,9 @@ Route::get('/logout', [LoginController::class, 'destroy'])
     ->name('login.destroy');
 
 
-Route::get('/formador', [FormadorController::class, 'index'])
-    ->middleware('auth.trainer')
-    ->name('formador.index');
+// Route::get('/formador', [FormadorController::class, 'index'])
+//     ->middleware('auth.trainer')
+//     ->name('formador.index');
 
 
 
