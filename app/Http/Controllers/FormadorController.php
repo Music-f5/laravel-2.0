@@ -37,11 +37,20 @@ class FormadorController extends Controller
     public function store(Request $request)
     {
         //$datosUsuario = request()-> all();
-        $datosUsuario = request()-> except('_token');
-        $datosUsuario['password'] = Hash::make($request->password);
-        User::insert($datosUsuario);
-        return response()-> json($datosUsuario);
+        // $datosUsuario = request()-> except('_token');
 
+        // User::insert($datosUsuario);
+        // return response()-> json($datosUsuario);
+        //Validar los datos
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->role = $request->role;
+
+        $user->save();
+        
+        return redirect(route('desarrollador'));
     }
 
     /**
