@@ -1,8 +1,7 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 # Music Player App 🎵
-
-Este proyecto es una aplicación para escuchar canciones. Los usuarios pueden insertar canciones, pero solo los formadores pueden reproducirlas. 
+Este proyecto es una aplicación donde podrás reproducir canciones para dar los buenos días y despertar a tus oyentes con buena música. Los usuarios pueden insertar canciones, pero solo los formadores pueden reproducirlas. 
 
 Está construido utilizando los siguientes lenguajes, frameworks y herramientas:
 
