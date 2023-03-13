@@ -36,6 +36,9 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 ## Documentación 📖
 Para obtener más información sobre cómo utilizar la aplicación, consulta la documentación en el archivo DOCUMENTATION.md en la raíz del proyecto.
 
+# Test
+- Para lanzar los test, utiliza el comando npm run test.    
+    
 
 ## Requisitos previos 📋
 Para utilizar esta aplicación, necesitarás tener instalado lo siguiente en tu máquina local:
@@ -53,6 +56,12 @@ Si no tienes alguno de estos requisitos previos, puedes descargarlos e instalarl
     
 ## Limitaciones conocidas 🚫
 Actualmente, solo se pueden reproducir canciones a través de la interfaz de administrador de las formadoras. Los usuarios normales no pueden reproducir canciones.
+
     
+## Participantes
+Este proyecto ha sido realizado por un equipo de 5 programadores en formación:
+
+[<img src="https://avatars.githubusercontent.com/u/120563338?v=4" width=115><br><sub>Mónica Braña</sub>]([https://github.com/Perezdh13](https://github.com/a20monicarr))|[<img src="https://avatars.githubusercontent.com/u/115170876?v=4" width=115><br><sub> Xavi Villaverde </sub>](https://github.com/Xavi1594)|[<img src="https://avatars.githubusercontent.com/u/110405159?v=4" width=115><br><sub>Yorlin Pachajoa</sub>](https://github.com/YorlinPacha) |[<img src="https://avatars.githubusercontent.com/u/117035764?v=4" width=115><br><sub>Marian Garcia</sub>](https://github.com/Marian4gc) | [<img src="https://avatars.githubusercontent.com/u/116543383?v=4" width=115><br><sub>Veronika Komarova</sub>](https://github.com/VeronikaKoma)|[<img src="https://avatars.githubusercontent.com/u/114617641?v=4" width=115><br><sub>Francisco Aguirre</sub>](hhttps://github.com/Francisco-Aguirr) | [<img src="https://avatars.githubusercontent.com/u/118717951?v=4" width=115><br><sub>Margarita Alvarez</sub>](https://github.com/MargaritaAlvarezGonz?tab=repositories) | [<img src="https://avatars.githubusercontent.com/u/117463292?v=4" width=115><br><sub>Anyell</sub>](https://github.com/Anismelow) |[<img src="https://github.com/irenefl" width=115><br><sub>Irene Fernandez</sub>](https://github.com/irenefl)
+| :---: | :---: | :---: |  :---: |  :---: | :---: | :---: | :---: | :---: |
  
 ¡Gracias por tu interés en nuestro proyecto! 😊
