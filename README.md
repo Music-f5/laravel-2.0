@@ -37,7 +37,7 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 Para obtener más información sobre cómo utilizar la aplicación, consulta la documentación en el archivo DOCUMENTATION.md en la raíz del proyecto.
 
 # Test
-- Para lanzar los test, utiliza el comando npm run test.    
+- Para lanzar los test, utiliza el comando php artisan test.    
     
 
 ## Requisitos previos 📋
