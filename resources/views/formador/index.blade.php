@@ -28,11 +28,13 @@
                             {{-- <a href="{{ url('/formador/' . $usuario->id . '/edit') }}"class="btn btn-info">
                                 Editar
                             </a> --}}
-                            <button class="btn btn-info"><i class="bi bi-gear-fill"></i></button>
+                            {{-- <button class="btn btn-info"><i class="bi bi-gear-fill"></i></button> --}}
+                            <a href="/formador/{{$usuario->id}}/edit" class="btn btn-info"><i class="bi bi-gear-fill"></i></a>  
                             
                             {{-- <input value="Borrar" type="submit" onclick="return confirm('Borrar el usuario ????') "
                                 class="btn btn-danger" /> --}}
-                            <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#modal-content"><i class="bi bi-x-lg"></i></button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Borrar el usuario ????') "  data-bs-toggle="modal" data-bs-target="#modal-content"><i class="bi bi-x-lg"></i></button>
+                            
                         </form>
                     </td>
                 </tr>

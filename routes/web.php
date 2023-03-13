@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FormadorController;
 use App\Http\Controllers\DesarrolladorController;
-
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,7 +89,9 @@ Route::get('/logout', [LoginController::class, 'destroy'])
 //     ->middleware('auth.trainer')
 //     ->name('formador.index');
 
-
+Route::get('storage-link', function(){
+    Artisan::call('storage:link');
+});
 
 
 ?>

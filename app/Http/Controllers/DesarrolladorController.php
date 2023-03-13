@@ -12,7 +12,8 @@ class DesarrolladorController extends Controller
     public function index()
     {
         //
-        $datos['songs'] = Song::paginate(5);
+        //$datos['songs'] = Song::paginate(5);
+        $datos['songs'] = Song::paginate();
         return view('desarrollador.index', $datos);
 
     }
@@ -37,10 +38,19 @@ class DesarrolladorController extends Controller
         //$datosUsuario = request()-> all();
         $datosSong = request()->except('_token');
 
-        if(request()->hasFile('image')){
+        /* if(request()->hasFile('image')){
             $datosSong['image']=$request->file('image')->store('uploads','public');
-        }  
-        
+        }  */ 
+
+        //$imagen = $request->file('image');
+        //$nombreImagen =time().'.'.$imagen->getClientOriginalExtension();
+        //$destino = public_path('uploads');
+        //$request->image->move($destino,$nombreImagen);
+        //$datosSong['image']= $nombreImagen; 
+
+        $datosSong['image']=$request->file('image')->store('uploads','public');
+
+          
         $datosSong['idUser']= auth()->user()->id;
         $datosSong['played']= 0;
         $datosSong['date']= null;
@@ -80,9 +90,10 @@ class DesarrolladorController extends Controller
             
             Song::where('id','=',$id)->update($datosSong);
 
-            if(request()->hasFile('image')){
+            /* if(request()->hasFile('image')){
                 $datosSong['image']=$request->file('image')->store('uploads','public');
-            }    
+            }   */  
+            $datosSong['image']=$request->file('image')->store('uploads','public');
 
             
         }else{
