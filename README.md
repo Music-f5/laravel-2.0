@@ -36,7 +36,7 @@ Si deseas contribuir al proyecto, sigue estos pasos:
 ## Documentación 📖
 Para obtener más información sobre cómo utilizar la aplicación, consulta la documentación en el archivo DOCUMENTATION.md en la raíz del proyecto.
 
-# Test
+# Test 🧾
 - Para lanzar los test, utiliza el comando php artisan test.    
     
 
@@ -58,7 +58,7 @@ Si no tienes alguno de estos requisitos previos, puedes descargarlos e instalarl
 Actualmente, solo se pueden reproducir canciones a través de la interfaz de administrador de las formadoras. Los usuarios normales no pueden reproducir canciones.
 
     
-## Participantes
+## Participantes😎
 Este proyecto ha sido realizado por un equipo de 5 programadores en formación:
 
 Mónica Raña | Marjane Rodrigues | Noelia Rilova | Mariela Yamilex | Irene Fernández
