@@ -61,7 +61,7 @@ Actualmente, solo se pueden reproducir canciones a través de la interfaz de adm
 ## Participantes
 Este proyecto ha sido realizado por un equipo de 5 programadores en formación:
 
-[<sub>Mónica Raña</sub>]([](https://github.com/a20monicarr))|[<sub> Marjane Rodrigues </sub>](https://github.com/Marjane506)|[<sub>MAriela Yamilex</sub>](https://github.com/MarielaYamilex70) |<sub>Noelia Rilova </sub>](https://github.com/orgs/Music-f5/people/nrilova)|[<img src="https://github.com/irenefl" width=115><br><sub>Irene Fernandez</sub>](https://github.com/irenefl)
-| :---: | :---: | :---: |  :---: |  :---: | :---: | :---: | :---: | :---: |
+Mónica Raña | Marjane Rodrigues | Noelia Rilova | Mariela Yamilex | Irene Fernández
+
  
 ¡Gracias por tu interés en nuestro proyecto! 😊
