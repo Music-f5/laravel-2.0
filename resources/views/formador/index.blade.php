@@ -25,11 +25,16 @@
                         <form action="{{ url('/formador/' . $usuario->id) }}" class='form' method="post">
                             @csrf
                             {{ method_field('DELETE') }}
-                            <a href="{{ url('/formador/' . $usuario->id . '/edit') }}"class="btn btn-info">
+                            {{-- <a href="{{ url('/formador/' . $usuario->id . '/edit') }}"class="btn btn-info">
                                 Editar
-                            </a>
-                            <input value="Borrar" type="submit" onclick="return confirm('Borrar el usuario ????') "
-                                class="btn btn-danger" />
+                            </a> --}}
+                            {{-- <button class="btn btn-info"><i class="bi bi-gear-fill"></i></button> --}}
+                            <a href="/formador/{{$usuario->id}}/edit" class="btn btn-info"><i class="bi bi-gear-fill"></i></a>  
+                            
+                            {{-- <input value="Borrar" type="submit" onclick="return confirm('Borrar el usuario ????') "
+                                class="btn btn-danger" /> --}}
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Borrar el usuario ????') "  data-bs-toggle="modal" data-bs-target="#modal-content"><i class="bi bi-x-lg"></i></button>
+                            
                         </form>
                     </td>
                 </tr>

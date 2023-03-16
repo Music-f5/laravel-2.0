@@ -44,7 +44,7 @@ class SongTest extends TestCase
 
         $song->delete();
 
-        $this->assertDatabaseMissing('songs', [
+        $this->assertDatabaseMissing('son', [
             'id' => $song->id,
         ]);
     }

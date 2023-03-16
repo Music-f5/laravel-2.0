@@ -1,7 +1,5 @@
-
-
 <div class="card bg-light">
-    <div class="card-header">Formulario</div>
+    {{-- <div class="card-header">Formulario</div> --}}
     <div class="card-body">
 
         <div class="formGroup">

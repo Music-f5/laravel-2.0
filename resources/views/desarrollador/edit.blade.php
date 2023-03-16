@@ -1,7 +1,11 @@
-<h1>Editar</h1>
+@extends('plantilla')
+@section('content')
 
-<form action="{{url('/formador/'.$usuario->id)}}"  class='form' method="post">
-    @csrf
-    {{method_field('PATCH')}}
-    @include('formador.form');           
-</form>
+    <h1>Editar</h1>
+
+    <form action="{{url('/desarrollador/'.$song->id)}}"  class='form' method="post" enctype="multipart/form-data">
+        @csrf
+        {{method_field('PATCH')}}
+        @include('desarrollador.form')       
+    </form>
+@endsection
